@@ -1,0 +1,7 @@
+/bin
+/zlib-*
+/win32
+/x64
+*.win32
+*.zip
+*.xml

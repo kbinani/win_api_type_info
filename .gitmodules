@@ -1,0 +1,3 @@
+[submodule "07_dump_struct_size/cmakemodules/add_msvc_precompiled_header"]
+	path = 07_dump_struct_size/cmakemodules/add_msvc_precompiled_header
+	url = https://gist.github.com/3e55feb6e4615d3624af90c5eaf57c33.git
