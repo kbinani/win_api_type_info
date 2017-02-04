@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
+	"bytes"
+	"io"
 )
 
 type Struct struct {
@@ -42,12 +44,22 @@ func LoadFromJson(v interface{}, file string) {
 }
 
 func SaveToJson(v interface{}, file string) error {
+	var encoded bytes.Buffer
+	enc := json.NewEncoder(&encoded)
+	enc.Encode(&v)
+
+	var indented bytes.Buffer
+	if err := json.Indent(&indented, encoded.Bytes(), "", "  "); err != nil {
+		return err
+	}
+
 	f, err := os.Create(file)
 	if err != nil {
 		return err
 	}
 	defer f.Close()
-	enc := json.NewEncoder(f)
-	enc.Encode(&v)
+
+	io.Copy(f, &indented)
+
 	return nil
 }
