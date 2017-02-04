@@ -1,10 +1,10 @@
 package main
 
 import (
-	"os"
 	"bufio"
-	"regexp"
 	"fmt"
+	"os"
+	"regexp"
 )
 
 var (
@@ -40,7 +40,7 @@ func main() {
 	}
 	defer f.Close()
 	fmt.Fprintf(f, "#include <stdafx.h>\n")
-	for def, _ := range allDefs {
+	for def := range allDefs {
 		fmt.Fprintf(f, "#ifdef %s\n", def)
 		fmt.Fprintf(f, "____%s(%s)\n", def, def)
 		fmt.Fprintf(f, "#endif\n")
@@ -57,7 +57,7 @@ func extractDefinePreprocessors(file string) ([]string, error) {
 	s := bufio.NewScanner(f)
 	for s.Scan() {
 		line := s.Text()
-//fmt.Printf("%s\n", line)
+		//fmt.Printf("%s\n", line)
 		if match := regDefine.FindSubmatch([]byte(line)); len(match) > 0 {
 			defs = append(defs, string(match[1]))
 		}

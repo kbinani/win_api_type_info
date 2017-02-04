@@ -34,19 +34,19 @@ func main() {
 	}
 
 	replace := map[string]string{
-		"__declspec(noreturn)": "",
-		"__stdcall": "",
-		"__cdecl": "",
-		"__forceinline": "",
-		"__inline": "",
-		"__declspec(novtable)": "",
-		"__declspec(dllimport)": "",
-		"__declspec(noinline)": "",
-		"__declspec(allocator)": "",
+		"__declspec(noreturn)":   "",
+		"__stdcall":              "",
+		"__cdecl":                "",
+		"__forceinline":          "",
+		"__inline":               "",
+		"__declspec(novtable)":   "",
+		"__declspec(dllimport)":  "",
+		"__declspec(noinline)":   "",
+		"__declspec(allocator)":  "",
 		"__declspec(deprecated)": "",
-		"__declspec(restrict)": "",
-		"__declspec(dllexport)": "",
-		"__unaligned": "",
+		"__declspec(restrict)":   "",
+		"__declspec(dllexport)":  "",
+		"__unaligned":            "",
 	}
 
 	regsReject := []*regexp.Regexp{

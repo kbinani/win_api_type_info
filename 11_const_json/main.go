@@ -1,8 +1,8 @@
 package main
 
 import (
-	"os"
 	"bufio"
+	"os"
 	"regexp"
 
 	. "github.com/kbinani/win_api_type_info"

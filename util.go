@@ -1,11 +1,11 @@
 package win_api_type_info
 
 import (
+	"bytes"
 	"encoding/json"
+	"io"
 	"io/ioutil"
 	"os"
-	"bytes"
-	"io"
 )
 
 type Struct struct {
