@@ -27,6 +27,9 @@ func main() {
 		line := s.Text()
 		if match := regPP.FindSubmatch([]byte(line)); len(match) > 0 {
 			name := string(match[1])
+			if name == "__FILEW__" { // may contains absolute file path
+				continue
+			}
 			value := string(match[2])
 			consts[name] = value
 		}
